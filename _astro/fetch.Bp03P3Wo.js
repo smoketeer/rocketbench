@@ -1,0 +1,1 @@
+var e=`/rocketbench/`.replace(/\/$/,``),t=t=>`${e}/${t.replace(/^\//,``)}`,n=e=>t(`data/${e}`),r=new Map;function i(e){let t=r.get(e);return t||(t=fetch(n(e),{cache:`no-cache`}).then(t=>{if(!t.ok)throw Error(`${e}: ${t.status}`);return t.json()}).catch(t=>{throw r.delete(e),t}),r.set(e,t)),t}var a=(e,t)=>i(`${e}/launch-${t}.json`);export{a as t};
